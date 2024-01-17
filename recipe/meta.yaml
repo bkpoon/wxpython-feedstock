@@ -96,7 +96,7 @@ requirements:
     - pcre2  # [not win]
     - pillow
     - pthread-stubs
-    - pypubsub  # [py3k]
+    - pypubsub
     - python.app  # [osx]
     - requests
     - setuptools
@@ -108,7 +108,7 @@ requirements:
 test:
   imports:
     - wx
-    - wx.lib.pubsub  # [py3k]
+    - wx.lib.pubsub
 
 about:
   home: https://wxpython.org/
