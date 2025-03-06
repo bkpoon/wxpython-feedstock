@@ -33,6 +33,7 @@ requirements:
     - make                               # [unix]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
     - {{ cdt('gtk2-devel') }}            # [linux]
     - {{ cdt('libpng-devel') }}          # [linux]
     - {{ cdt('libxrender-devel') }}      # [linux]
@@ -102,7 +103,7 @@ requirements:
     - pypubsub  # [py3k]
     - pathlib2
     - numpy
-    - pillow 
+    - pillow
 
 test:
   imports:
