@@ -1,6 +1,18 @@
 MACOSX_SDK_VERSION:        # [osx and x86_64]
-  - 10.13                  # [osx and x86_64]
+  - 10.9                  # [osx and x86_64]
 MACOSX_DEPLOYMENT_TARGET:  # [osx and x86_64]
-  - 10.13                  # [osx and x86_64]
+  - 10.9                  # [osx and x86_64]
 c_stdlib_version:          # [osx and x86_64]
   - 10.13                  # [osx and x86_64]
+cdt_name:                  # [linux]
+  - cos6                   # [linux]
+c_compiler:                # [win]
+  - vs2019                 # [win]
+cxx_compiler:              # [win]
+  - vs2019                 # [win]
+docker_image:                                     # [linux]
+  - quay.io/condaforge/linux-anvil-cos7-x86_64    # [linux]
+gstreamer:
+  - 1.20
+gst_plugins_base:
+  - 1.20
