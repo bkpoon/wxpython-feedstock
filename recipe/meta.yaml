@@ -75,7 +75,8 @@ requirements:
     - pango  # [linux]
     - pthread-stubs
     - requests
-    - setuptools =65
+    - setuptools  # [not win]
+    - setuptools <70 # [win]
     - xz  # [not win]
     - zlib  # [not win]
     - pathlib2
