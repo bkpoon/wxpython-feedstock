@@ -20,10 +20,10 @@ cxx_compiler_version:
 - '18'
 expat:
 - '2'
-jpeg:
-- '9'
 libiconv:
 - '1'
+libjpeg_turbo:
+- '3'
 libpng:
 - '1.6'
 macos_machine:
