@@ -72,6 +72,7 @@ requirements:
     - libiconv  # [osx]
     - libpng  # [not win]
     - libxml2  # [linux]
+    - libxcrypt  # [linux]
     - pango  # [linux]
     - pthread-stubs
     - requests
