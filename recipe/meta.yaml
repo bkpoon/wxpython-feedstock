@@ -80,6 +80,8 @@ requirements:
     - xz  # [not win]
     - zlib  # [not win]
     - pathlib2
+    - pyside2
+    - qt-webengine
   run:
     - python
     - cairo  # [linux]
