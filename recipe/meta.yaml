@@ -64,7 +64,7 @@ requirements:
     - expat  # [not win]
     - gettext  # [not win]
     - glib  # [linux]
-    - gst-plugins-base >1.21 # [linux]
+    - gst-plugins-base  # [linux]
     - gstreamer  # [linux]
     - gtk2  # [linux]
     # - jpeg  # [not win]

@@ -21,9 +21,9 @@ expat:
 glib:
 - '2'
 gst_plugins_base:
-- '1.20'
+- '1'
 gstreamer:
-- '1.20'
+- '1'
 libjpeg_turbo:
 - '3'
 libpng:
