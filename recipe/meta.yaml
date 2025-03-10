@@ -68,6 +68,7 @@ requirements:
     - gstreamer  # [linux]
     - gtk2  # [linux]
     # - jpeg  # [not win]
+    - harfbuzz =9 # [linux]
     - libjpeg-turbo # [not win]
     - libglu  # [linux]
     - libiconv  # [osx]
