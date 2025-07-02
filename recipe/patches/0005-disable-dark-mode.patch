@@ -1,0 +1,79 @@
+diff --git a/ext/wxWidgets/src/common/settcmn.cpp b/src/common/settcmn.cpp
+index f83e68786c..f5bd3612f7 100644
+--- a/ext/wxWidgets/src/common/settcmn.cpp
++++ b/ext/wxWidgets/src/common/settcmn.cpp
+@@ -77,19 +77,21 @@ wxString wxSystemAppearance::GetName() const
+ 
+ bool wxSystemAppearance::IsDark() const
+ {
+-    return IsUsingDarkBackground();
++    // return IsUsingDarkBackground();
++    return false;
+ }
+ 
+ #endif // !__WXOSX__
+ 
+ bool wxSystemAppearance::IsUsingDarkBackground() const
+ {
+-    const wxColour bg = wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOW);
+-    const wxColour fg = wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOWTEXT);
++    // const wxColour bg = wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOW);
++    // const wxColour fg = wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOWTEXT);
+ 
+     // The threshold here is rather arbitrary, but it seems that using just
+     // inequality would be wrong as it could result in false positivies.
+-    return fg.GetLuminance() - bg.GetLuminance() > 0.2;
++    // return fg.GetLuminance() - bg.GetLuminance() > 0.2;
++    return false;
+ }
+ 
+ wxSystemAppearance wxSystemSettingsNative::GetAppearance()
+diff --git a/ext/wxWidgets/src/osx/cocoa/settings.mm b/src/osx/cocoa/settings.mm
+index de5f52860c..6bb3814a3f 100644
+--- a/ext/wxWidgets/src/osx/cocoa/settings.mm
++++ b/ext/wxWidgets/src/osx/cocoa/settings.mm
+@@ -60,20 +60,21 @@ wxString wxSystemAppearance::GetName() const
+ 
+ bool wxSystemAppearance::IsDark() const
+ {
+-#if __MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_14
+-    if ( WX_IS_MACOS_AVAILABLE(10, 14) )
+-    {
+-        const NSAppearanceName
+-            appearanceName = [[NSApp effectiveAppearance]
+-                                bestMatchFromAppearancesWithNames:
+-                                @[NSAppearanceNameAqua, NSAppearanceNameDarkAqua]];
+-
+-        return [appearanceName isEqualToString:NSAppearanceNameDarkAqua];
+-    }
+-#endif
+-
+-    // Fall back on the generic method when not running under 10.14.
+-    return IsUsingDarkBackground();
++// #if __MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_14
++//     if ( WX_IS_MACOS_AVAILABLE(10, 14) )
++//     {
++//         const NSAppearanceName
++//             appearanceName = [[NSApp effectiveAppearance]
++//                                 bestMatchFromAppearancesWithNames:
++//                                 @[NSAppearanceNameAqua, NSAppearanceNameDarkAqua]];
++
++//         return [appearanceName isEqualToString:NSAppearanceNameDarkAqua];
++//     }
++// #endif
++
++//     // Fall back on the generic method when not running under 10.14.
++//     return IsUsingDarkBackground();
++    return false;
+ }
+ 
+ // ----------------------------------------------------------------------------
+@@ -87,7 +88,7 @@ bool wxSystemAppearance::IsDark() const
+ wxColour wxSystemSettingsNative::GetColour(wxSystemColour index)
+ {
+     wxOSXEffectiveAppearanceSetter helper;
+-    
++
+     NSColor* sysColor = nil;
+     switch( index )
+     {

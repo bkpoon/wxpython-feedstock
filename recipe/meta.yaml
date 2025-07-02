@@ -16,6 +16,7 @@ source:
     - patches/hard-define-win.patch  # [win]
     # https://github.com/wxWidgets/wxWidgets/pull/2354
     - patches/2354-OS_X-Add-toll-free-bridging-info.patch
+    - patches/0005-disable-dark-mode.patch
 
 build:
   number: 8
